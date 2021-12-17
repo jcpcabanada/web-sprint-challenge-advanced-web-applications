@@ -13,6 +13,7 @@ const testArticle = {
     summary: 'test summary',
     body: 'test body'
 }
+
 const autoPressTest = {
     headline: '',
     author: null,
@@ -49,8 +50,6 @@ test('executes handleDelete when the delete button is pressed', ()=> {
     userEvent.click(button);
     expect(handleDelete).toBeCalled();
 });
-
-
 
 
 // Task List:
