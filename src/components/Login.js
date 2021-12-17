@@ -21,7 +21,6 @@ const Login = () => {
         axios
             .post("http://localhost:5000/api/login", values)
             .then(res => {
-                console.log(res);
 
                 const token = res.data.token;
                 const role = res.data.role;
