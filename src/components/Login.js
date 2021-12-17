@@ -15,12 +15,22 @@ const errorInitialValues = {
 const Login = () => {
     const [values, setValues] = useState(initialValues);
     const [error, setError] = useState(errorInitialValues);
+    const {push} = useHistory();
 
     const login = () => {
         axios
             .post("http://localhost:5000/api/login", values)
             .then(res => {
                 console.log(res);
+
+                const token = res.data.token;
+                const role = res.data.role;
+                const username = res.data.username;
+
+                localStorage.setItem("token", token);
+                localStorage.setItem("role", role);
+                localStorage.setItem("username", username);
+                push("./view");
             })
             .catch(err => {
                 console.error(err);
@@ -40,6 +50,11 @@ const Login = () => {
         })
     }
 
+    const onSubmit = evt => {
+        evt.preventDefault();
+        login();
+    }
+
 
     return (
         <ComponentContainer>
@@ -50,7 +65,7 @@ const Login = () => {
             </ModalContainer>
 
             <div>
-                <FormGroup onSubmit={onsubmit}>
+                <FormGroup onSubmit={onSubmit}>
                     <Label>Username: &nbsp;</Label>
                     <input
                         type="text"
