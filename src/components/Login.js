@@ -13,8 +13,33 @@ const errorInitialValues = {
 }
 
 const Login = () => {
-    const [values, setValues] = useState(initialValues)
-    const [error, setError] = useState(errorInitialValues)
+    const [values, setValues] = useState(initialValues);
+    const [error, setError] = useState(errorInitialValues);
+
+    const login = () => {
+        axios
+            .post("http://localhost:5000/api/login", values)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.error(err);
+                setError(err.response.data);
+                setValues(initialValues);
+            })
+
+
+    }
+
+    const onChange = evt => {
+        const name =  evt.target.name;
+        const value = evt.target.value;
+        setValues({
+            ...values,
+            [name]: value
+        })
+    }
+
 
     return (
         <ComponentContainer>
@@ -25,14 +50,14 @@ const Login = () => {
             </ModalContainer>
 
             <div>
-                <FormGroup>
+                <FormGroup onSubmit={onsubmit}>
                     <Label>Username: &nbsp;</Label>
                     <input
                         type="text"
                         id="username"
                         name="username"
                         value={values.username}
-                        onChange={onchange}
+                        onChange={onChange}
                     />
                     <label>Password: &nbsp;</label>
                     <Input
@@ -40,7 +65,7 @@ const Login = () => {
                         id="password"
                         name="password"
                         value={values.password}
-                        onChange={onchange}
+                        onChange={onChange}
                     />
                     <Button id="submit">Login</Button>
                 </FormGroup>
