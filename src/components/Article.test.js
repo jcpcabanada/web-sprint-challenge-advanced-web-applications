@@ -3,7 +3,6 @@ import '@testing-library/jest-dom';
 import { render, screen } from "@testing-library/react";
 import Article  from './Article'
 import userEvent from '@testing-library/user-event';
-import MutationObserver from 'mutationobserver-shim';
 
 import Article from './Article';
 
