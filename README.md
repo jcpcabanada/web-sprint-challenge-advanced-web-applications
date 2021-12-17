@@ -113,22 +113,22 @@ In this project, you will demonstrate your mastery of these skills by creating *
 * [ ] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
 
 ## Interview Questions
-
+wser, also through HTTP.
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers below.
 
 1. Explain what a token is used for.
-   <br/>
-   A)
-   <br/>
+   <br/><br/>
+   A)  A token is usually only used to represent security information, it can also hold freeform data that can added while the token is being formed.
+   <br/><br/>
 2. What steps can you take in your web apps to keep your data secure?
-   <br/>
-   A)
-   <br/>
+   <br/><br/>
+   A) It can be secured by a private route to secure my data. And also can use tokens in your web apps to keep your data secure.
+   <br/><br/>
 3. Describe how web servers work.
-   <br/>
-   A)
-   <br/>
+   <br/><br/>
+   A)  When a browser requires a file hosted on a web server, the browser uses HTTP to request the file. The HTTP server accepts the request when it reaches the correct web server, finds the requested content, and delivers it back to the browser over HTTP.
+   <br/><br/>
 4. Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
-   <br/>
-   A)
-   <br/>
+   <br/><br/>
+   A)  C: Create- uses POST method to create data 
+   <br/><br/>

@@ -1,23 +1,33 @@
 import React from 'react';
-import { Route } from "react-router-dom";
+import {Route} from "react-router-dom";
 import styled from 'styled-components';
 
 import Header from './Header';
 import BloomHeader from './BloomHeader';
 import Login from './Login';
+import View from "./View";
 
 const App = () => {
-  return (
-    <AppContainer>
-      <BloomHeader/>
-      <Header/>
-      <RouteContainer>
-        <Route exact path="/">
-          <Login/>
-        </Route>          
-      </RouteContainer>
-    </AppContainer>
-  )
+    return (
+        <AppContainer>
+            <BloomHeader/>
+            <Header/>
+            <RouteContainer>
+                <Route exact path="/">
+                    <Login/>
+                </Route>
+                <Route exact path="/login">
+                    <Login/>
+                </Route>
+                <Route exact path="/view">
+                    <View/>
+                </Route>
+                <Route exact path="/logout">
+                    <Login/>
+                </Route>
+            </RouteContainer>
+        </AppContainer>
+    )
 }
 
 export default App;
